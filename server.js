@@ -5,7 +5,7 @@ const log = console.log;
 const app = express();
 const path = require('path');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //Chunk 2
 // Data parsing
@@ -32,4 +32,4 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-app.listen(PORT, () => log('Server is starting on PORT, ', 3000));
+app.listen(PORT, () => log('Server is starting on PORT, ', PORT));
